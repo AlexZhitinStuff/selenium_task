@@ -32,11 +32,6 @@ public class AuthenticationPage {
         PageFactory.initElements(driver, this);
     }
 
-    @Step("Click Sign In button on the authentication page")
-    public void clickSignIn() {
-        Utils.clickElement(buttonSignIn, 5, driver);
-    }
-
     @Step("Put in valid credentials and click the Sign in button")
     public void logInSuccess() {
         Utils.input(fieldEmail, 5, driver, email);
