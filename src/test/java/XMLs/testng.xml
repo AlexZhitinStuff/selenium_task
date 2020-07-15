@@ -14,7 +14,7 @@
             <class name="Tests.LogOutTest">
                 <methods>
                     <include name="log_out_ui"/>
-                    <include name="log_out_url"/>
+                    <!--<include name="log_out_url"/>-->
                 </methods>
             </class>
         </classes>
@@ -22,7 +22,7 @@
 
     <parameter name="appURL" value="http://automationpractice.com"/>
 
-    <test verbose="2" name="Firefox_tests" parallel="classes" thread-count="1">
+    <!--<test verbose="2" name="Firefox_tests" parallel="classes" thread-count="1">
         <parameter name="browser" value="firefox"/>
         <classes>
             <class name="Tests.LogOutTest">
@@ -32,5 +32,5 @@
                 </methods>
             </class>
         </classes>
-    </test>
+    </test>-->
 </suite>

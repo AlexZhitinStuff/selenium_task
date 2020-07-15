@@ -1,6 +1,5 @@
 package Tests;
 
-import Base.AllureTestListener;
 import Base.TestBase;
 import Pages.AccountPage;
 import Pages.AuthenticationPage;
@@ -15,11 +14,12 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 
-public class LogOutTest extends TestBase {
+public class LogOutTest extends TestBase{
     private WebDriver driver;
     HomePage home_page;
     AuthenticationPage authentication_page;
     AccountPage account_page;
+
 
     @BeforeMethod
     public void setUp() {
@@ -40,16 +40,11 @@ public class LogOutTest extends TestBase {
         authentication_page.logInSuccess();
         account_page.clickLogOut();
 
-        if (authentication_page.checkAuthenticationPageURL()) {
-            Assert.assertTrue(true);
-        } else {
-            AllureTestListener.saveTextLog(error);
-            Assert.fail();
-        }
+        Assert.assertTrue(authentication_page.checkAuthenticationPageURL(), error);
     }
 
 
-    @Test(description = "Testcase: User can successfully log out by calling http://automationpractice.com/index.php?mylogout=")
+   /* @Test(description = "Testcase: User can successfully log out by calling http://automationpractice.com/index.php?mylogout=")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Check if user can successfully log out from their account by calling http://automationpractice.com/index.php?mylogout=")
 
@@ -62,12 +57,7 @@ public class LogOutTest extends TestBase {
 
         driver.get("http://automationpractice.com/index.php?mylogout="); //Calling to this URL logs out the user
 
+        Assert.assertTrue(home_page.checkHomePageURL(), error);
 
-        if (home_page.checkHomePageURL()) {
-            Assert.assertTrue(true);
-        } else {
-            AllureTestListener.saveTextLog(error);
-            Assert.fail();
-        }
-    }
+    }*/
 }
