@@ -24,9 +24,9 @@ public class LogOutTest extends TestBase{
     @BeforeMethod
     public void setUp() {
         driver = getDriver();
-        home_page = PageFactory.initElements(driver, HomePage.class);
-        authentication_page = PageFactory.initElements(driver, AuthenticationPage.class);
-        account_page = PageFactory.initElements(driver, AccountPage.class);
+        home_page = new HomePage(driver);
+        authentication_page = new AuthenticationPage(driver);
+        account_page = new AccountPage(driver);
     }
 
     @Test(description = "Testcase: User can successfully log out by click on the Sign out button")
@@ -44,7 +44,7 @@ public class LogOutTest extends TestBase{
     }
 
 
-   /* @Test(description = "Testcase: User can successfully log out by calling http://automationpractice.com/index.php?mylogout=")
+    @Test(description = "Testcase: User can successfully log out by calling http://automationpractice.com/index.php?mylogout=")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Check if user can successfully log out from their account by calling http://automationpractice.com/index.php?mylogout=")
 
@@ -59,5 +59,5 @@ public class LogOutTest extends TestBase{
 
         Assert.assertTrue(home_page.checkHomePageURL(), error);
 
-    }*/
+    }
 }
